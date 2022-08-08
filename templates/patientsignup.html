@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href=" {{ url_for('static', filename='assets/css/addPatient.css') }}">
+
+<body>
+  <div class="page-wrapper">
+    <div class="nav-wrapper">
+     <div class="grad-bar"></div>
+     <nav class="navbar">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/ICU_logo.jpg" alt="Company Logo">
+       <div class="menu-toggle" id="mobile-menu">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+       </div>
+       <ul class="nav no-search">
+         <li class="nav-item"><a href="http://localhost:5000/home">Home</a></li>
+         <li class="nav-item"><a href="http://localhost:5000/viewPatient">View Patients</a></li>
+       </ul>
+     </nav>
+     </div>
+     <section class="headline">
+       <h1>Add Patient</h1>
+     </section>
+     <section class="features">
+      <form action="http://127.0.0.1:5000/addpatient", method = 'POST',style="border:1px solid #ccc">
+        <div class="container">
+          <h2>Sign Up</h2>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="pemail" required>
+      
+          <label for="ssn"><b>SSN</b></label>
+          <input type="text" placeholder="Enter SSN" name="pssn" required>
+      
+          <label for="ID"><b>ID</b></label>
+          <input type="text" placeholder="Enter ID" name="pID" min="1" required>
+      
+          <label for="Fnme"><b>First Name</b></label>
+          <input type="text" placeholder="Enter First Name" name="pfnme" required>
+      
+          <label for="Lname"><b>Last Name</b></label>
+          <input type="text" placeholder="Enter Last Name" name="pLname" required>
+      
+      
+          <label for="roomno"><b> Room Number </b></label>
+          <input type="text" placeholder="Enter Room Number" name="roomnumber" required>
+      
+          
+          <label for="telephone"><b> Telephone </b></label>
+          <input type="tel" placeholder="Enter telephone number" name="ptelephone" required>
+      
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="ppsw" required>
+      
+          
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+          
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+     </section>
+   </div>
+  
+
+
+</body>
+
+  <script>
+
+
+    $('.menu-toggle').click(function(){
+      $(".nav").toggleClass("mobile-nav");
+      $(this).toggleClass("is-active");
+    });
+  </script>
+
+
+
+
+</html>
